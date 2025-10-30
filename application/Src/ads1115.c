@@ -25,7 +25,7 @@
 #include "ads1115.h"
 
 /**
-  * @brief ADS1115 init function
+  * @brief ADS1115 init function 初始化函数
   * @param sensor: Sensor struct
   * @retval None
   */
@@ -47,7 +47,7 @@ void ADS1115_Init(sensor_t * sensor)
 }
 
 /**
-  * @brief ADS1115 get measured data
+  * @brief ADS1115 get measured data 获取测量数据
   * @param sensor: Sensor struct
   * @retval data
   */
@@ -57,7 +57,7 @@ int16_t ADS1115_GetData(sensor_t * sensor, uint8_t channel)
 }
 
 /**
-  * @brief ADS1115 start processing data in blocking mode
+  * @brief ADS1115 start processing data in blocking mode 以阻塞模式开始处理数据
   * @param sensor: Sensor struct
   * @retval status
   */
@@ -79,7 +79,7 @@ int ADS1115_ReadBlocking(sensor_t * sensor, uint8_t channel)
 }
 
 /**
-  * @brief ADS1115 set mux in blocking mode
+  * @brief ADS1115 set mux in blocking mode 将多路复用器设置为阻塞模式
   * @param sensor: Sensor struct
   * @retval status
   */
@@ -99,7 +99,7 @@ int ADS1115_SetMuxBlocking(sensor_t * sensor, uint8_t channel)
 }
 
 /**
-  * @brief ADS1115 start processing data in DMA mode
+  * @brief ADS1115 start processing data in DMA mode 开始以DMA模式处理数据
   * @param sensor: Sensor struct
   * @retval status
   */
@@ -121,7 +121,7 @@ int ADS1115_StartDMA(sensor_t * sensor, uint8_t channel)
 }
 
 /**
-  * @brief ADS1115 set mux in DMA mode
+  * @brief ADS1115 set mux in DMA mode 将多路复用器设置为DMA模式
   * @param sensor: Sensor struct
   * @retval status
   */
