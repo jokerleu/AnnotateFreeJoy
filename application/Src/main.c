@@ -38,7 +38,8 @@
 
 
 /* Private variables ---------------------------------------------------------*/
-dev_config_t dev_config;
+dev_config_t dev_config; ///< 这是行尾注释
+/** @brief 简单注释测试 */
 volatile uint8_t bootloader = 0;
 
 /* Private function prototypes -----------------------------------------------*/
