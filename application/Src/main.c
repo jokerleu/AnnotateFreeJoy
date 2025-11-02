@@ -88,6 +88,7 @@ int main(void)
 		ButtonsDebounceProcess(&dev_config);
 		ButtonsReadLogical(&dev_config);
 		
+		// LED物理处理主函数
 		LEDs_PhysicalProcess(&dev_config);
 		
 		analog_data_t tmp[8];
