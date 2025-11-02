@@ -1505,12 +1505,12 @@ static __INLINE void NVIC_EnableIRQ(IRQn_Type IRQn)
 }
 
 /**
- * @brief  Disable the interrupt line for external interrupt specified
+ * @brief  Disable the interrupt line for external interrupt specified 禁用指定外部中断的中断线路
  * 
- * @param  IRQn   The positive number of the external interrupt to disable
+ * @param  IRQn   The positive number of the external interrupt to disable 要禁用的外部中断的正数
  * 
  * Disable a device specific interupt in the NVIC interrupt controller.
- * The interrupt number cannot be a negative value.
+ * The interrupt number cannot be a negative value. 在NVIC中断控制器中禁用特定于设备的中断。中断号不能为负值。
  */
 static __INLINE void NVIC_DisableIRQ(IRQn_Type IRQn)
 {
@@ -1712,9 +1712,9 @@ static __INLINE uint32_t SysTick_Config(uint32_t ticks)
 /* ##################################    Reset function  ############################################ */
 
 /**
- * @brief  Initiate a system reset request.
+ * @brief  Initiate a system reset request. 发起系统重置请求
  *
- * Initiate a system reset request to reset the MCU
+ * Initiate a system reset request to reset the MCU 发起系统重置请求以重置MCU
  */
 static __INLINE void NVIC_SystemReset(void)
 {

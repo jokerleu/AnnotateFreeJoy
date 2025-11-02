@@ -4,7 +4,7 @@
   * @author  MCD Application Team
   * @version V4.1.0
   * @date    26-May-2017
-  * @brief   Descriptors for Custom HID Demo
+  * @brief   Descriptors for Custom HID Demo 自定义HID演示的描述符
   ******************************************************************************
   * @attention
   *

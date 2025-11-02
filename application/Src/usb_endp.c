@@ -4,7 +4,7 @@
   * @author  MCD Application Team
   * @version V4.1.0
   * @date    26-May-2017
-  * @brief   Endpoint routines
+  * @brief   Endpoint routines 终点例程
   ******************************************************************************
   * @attention
   *

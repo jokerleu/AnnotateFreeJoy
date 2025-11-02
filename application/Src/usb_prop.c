@@ -4,7 +4,7 @@
   * @author  MCD Application Team
   * @version V4.1.0
   * @date    26-May-2017
-  * @brief   All processing related to Custom HID Demo
+  * @brief   All processing related to Custom HID Demo 与自定义HID演示相关的所有处理
   ******************************************************************************
   * @attention
   *

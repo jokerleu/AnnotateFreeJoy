@@ -1,5 +1,9 @@
 {
     "files.associations": {
-        "periphery.h": "c"
+        "periphery.h": "c",
+        "usb_pwr.h": "c",
+        "usb_desc.h": "c",
+        "usb_hw.h": "c",
+        "config.h": "c"
     }
 }

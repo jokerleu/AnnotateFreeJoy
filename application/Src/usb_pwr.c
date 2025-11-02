@@ -4,7 +4,7 @@
   * @author  MCD Application Team
   * @version V4.1.0
   * @date    26-May-2017
-  * @brief   Connection/disconnection & power management
+  * @brief   Connection/disconnection & power management 连接/断开和电源管理
   ******************************************************************************
   * @attention
   *

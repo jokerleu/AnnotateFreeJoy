@@ -1,7 +1,7 @@
 /**
   ******************************************************************************
   * @file           : tle5011.c
-  * @brief          : TLE5011 sensors driver implementation
+  * @brief          : TLE5011 sensors driver implementation TLE5011角度传感器驱动程序实现
 			
 		FreeJoy software for game device controllers
     Copyright (C) 2020  Yury Vostrenkov (yuvostrenkov@gmail.com)

@@ -4,7 +4,7 @@
   * @author  MCD Application Team
   * @version V4.1.0
   * @date    26-May-2017
-  * @brief   ISTR events interrupt service routines
+  * @brief   ISTR events interrupt service routines ISTR事件中断服务程序
   ******************************************************************************
   * @attention
   *

@@ -98,9 +98,9 @@ int main(void)
 		// Enter flasher command received
 		if (bootloader > 0)
 		{
-			// Disable HID report generation
+			// Disable HID report generation 禁用指定外部中断的中断线路
 			NVIC_DisableIRQ(TIM2_IRQn);
-			Delay_ms(50);	// time to let HID end last transmission
+			Delay_ms(50);	// time to let HID end last transmission 让HID结束最后一次传输
 			// Disable USB
 			PowerOff();
 			USB_HW_DeInit();
@@ -111,19 +111,19 @@ int main(void)
 }
 
 /**
-  * @brief  Jumping to memory address corresponding bootloader program
+  * @brief  Jumping to memory address corresponding bootloader program 跳转到相应引导加载程序的内存地址
   * @param  None
   * @retval None
   */
 void EnterBootloader (void)
 {
 	/* Enable the power and backup interface clocks by setting the
-	 * PWREN and BKPEN bits in the RCC_APB1ENR register
+	 * PWREN and BKPEN bits in the RCC_APB1ENR register 通过在RCC_APB1ENR寄存器中设置PWREN和BKPEN位来启用电源和备份接口时钟
 	 */
 	SET_BIT(RCC->APB1ENR, RCC_APB1ENR_BKPEN | RCC_APB1ENR_PWREN);
 
 	/* Enable write access to the backup registers and the
-		* RTC.
+		* RTC. 启用对备份寄存器和RTC的写访问
 		*/
 	SET_BIT(PWR->CR, PWR_CR_DBP);
 	WRITE_REG(BKP->DR4, 0x424C);
@@ -131,6 +131,7 @@ void EnterBootloader (void)
 	
 	CLEAR_BIT(RCC->APB1ENR, RCC_APB1ENR_BKPEN | RCC_APB1ENR_PWREN);
 	
+	// 发起系统重置请求
 	NVIC_SystemReset();
 }
 

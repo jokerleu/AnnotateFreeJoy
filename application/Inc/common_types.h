@@ -373,6 +373,11 @@ typedef struct
 
 
 /******************** DEVICE CONFIGURATION **********************/
+
+/**
+ * @brief 设备配置结构体，存储持久化设备配置
+ * 
+ */
 typedef struct 
 {
 	// config 1

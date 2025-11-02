@@ -1,7 +1,12 @@
-#include "usb_hw.h"
+/**
+ * @file usb_hw.c
+ * @brief USB硬件抽象层驱动，实现STM32系列MCU的USB外设初始化配置
+ * 
+ */
+#include "usb_hw.h" ///> USB设备库
 #include "usb_lib.h"
-#include "usb_desc.h"
-#include "usb_pwr.h"
+#include "usb_desc.h" ///> 描述符处理
+#include "usb_pwr.h" ///> 电源管理
 
 #include "config.h"
 #include "string.h"
@@ -24,7 +29,7 @@ static void AsciiToUnicode (uint8_t * pbuf_in , uint8_t *pbuf_out , uint8_t len)
 
 /*******************************************************************************
 * Function Name  : Set_System
-* Description    : Configures Main system clocks & power.
+* Description    : Configures Main system clocks & power. 配置系统时钟和GPIO引脚
 * Input          : None.
 * Return         : None.
 *******************************************************************************/
@@ -103,7 +108,7 @@ void Set_System(void)
 
 /*******************************************************************************
 * Function Name  : Set_USBClock
-* Description    : Configures USB Clock input (48MHz).
+* Description    : Configures USB Clock input (48MHz). 配置USB时钟源(48MHz)
 * Input          : None.
 * Output         : None.
 * Return         : None.
@@ -125,7 +130,7 @@ void Set_USBClock(void)
 
 /*******************************************************************************
 * Function Name  : USB_Interrupts_Config.
-* Description    : Configures the USB interrupts.
+* Description    : Configures the USB interrupts. 配置USB相关中断
 * Input          : None.
 * Output         : None.
 * Return         : None.
@@ -178,7 +183,7 @@ void USB_Interrupts_Config(void)
 
 /*******************************************************************************
 * Function Name  : Get_SerialNum.
-* Description    : Create the serial number string descriptor.
+* Description    : Create the serial number string descriptor. 生成设备序列号字符串描述符
 * Input          : None.
 * Output         : None.
 * Return         : None.
@@ -187,6 +192,7 @@ void Get_SerialNum(void)
 {
   uint32_t Device_Serial0, Device_Serial1, Device_Serial2;
   
+  // 从芯片唯一ID寄存器读取
   Device_Serial0 = *(uint32_t*)ID1;
   Device_Serial1 = *(uint32_t*)ID2;
   Device_Serial2 = *(uint32_t*)ID3;
@@ -202,7 +208,7 @@ void Get_SerialNum(void)
 
 /*******************************************************************************
 * Function Name  : Get_ProductStr.
-* Description    : Create the product string descriptor.
+* Description    : Create the product string descriptor. 生成产品字符串描述符
 * Input          : None.
 * Output         : None.
 * Return         : None.
@@ -218,7 +224,7 @@ void Get_ProductStr(void)
 
 /*******************************************************************************
 * Function Name  : HexToChar.
-* Description    : Convert Hex 32Bits value into char.
+* Description    : Convert Hex 32Bits value into char. 将32位整数值转换为Unicode字符
 * Input          : None.
 * Output         : None.
 * Return         : None.
@@ -246,7 +252,7 @@ static void IntToUnicode (uint32_t value , uint8_t *pbuf , uint8_t len)
 
 /*******************************************************************************
 * Function Name  : AsciiToUnicode
-* Description    : Convert ASCII string value into unicode array.
+* Description    : Convert ASCII string value into unicode array. 将ASCII字符串转换为Unicode数组
 * Input          : None.
 * Output         : None.
 * Return         : None.
@@ -425,6 +431,10 @@ uint8_t Get_ReportDesc(void)
 	return i;
 }
 
+/**
+ * @brief USB硬件初始化主函数
+ * 
+ */
 void USB_HW_Init(void)
 {
 	Set_System();
@@ -437,6 +447,10 @@ void USB_HW_Init(void)
 	
 }
 
+/**
+ * @brief USB硬件反初始化
+ * 
+ */
 void USB_HW_DeInit(void)
 {
 	GPIO_InitTypeDef  GPIO_InitStructure;  
